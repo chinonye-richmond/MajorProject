@@ -3,6 +3,9 @@
 public class DQ_Runner {
     public static void main(String[] args) throws Exception {
         
+        DQ game = new DQ();
+        game.email();
+        game.PrintStats();
     
     
         
