@@ -41,13 +41,13 @@ public class DQ {
             DressCode[0] = rand(0,50);
             Health[0] = rand(0,50);
             Professionalism[0] = rand(0,50);
-            CustomerService[0] = rand(0,50)
+            CustomerService[0] = rand(0,50);
         }
 
     }
 
     public void alarm(){
-        System.out.println("It's 7am and your alarm is blaring. \n a) Get up and start getting ready. \n b) Hit snooze ")
+        System.out.println("It's 7am and your alarm is blaring. \n a) Get up and start getting ready. \n b) Hit snooze ");
         String two = keys.nextLine();
         if (two == "a"){
             Punctuality[1] = rand(50,100);
@@ -59,53 +59,54 @@ public class DQ {
     }
 
     public void fit(){
-        int one, two, three, four;
+        int [] dresscode = new int[4];
         System.out.println("Pick your outfit for work:");
         System.out.println("Top: a) DQ shirt b) graphic tee");
-        String i keys.nextLine();
+        String i = keys.nextLine();
         System.out.println("Bottom: a) black dress pants b) leggings");
-        String ii keys.nextLine();
+        String ii = keys.nextLine();
         System.out.println("Accessories: a) DQ hat b) trucker hat");
-        String iii keys.nextLine();
+        String iii = keys.nextLine();
         System.out.println("Hair: a) braids up in a bun b) braids let down");
-        String iv keys.nextLine();
+        String iv = keys.nextLine();
 
         if (i == "a" ){
-            one = rand(50,100);
+            dresscode[0] = rand(50,100);
         }
         else if (i == "b"){
-            one = rand(0,50);
+            dresscode[0] = rand(0,50);
         }
 
         if (ii == "a" ){
-            two = rand(50,100);
+            dresscode[1] = rand(50,100);
         }
         else if (ii == "b"){
-            two = rand(0,50);
+            dresscode[1] = rand(0,50);
         }
         if (iii == "a" ){
-            three = rand(50,100);
+            dresscode[2] = rand(50,100);
         }
         else if (iii == "b"){
-            three = rand(0,50);
+            dresscode[2] = rand(0,50);
         }
         if (iv == "a" ){
-            four = rand(50,100);
+            dresscode[3] = rand(50,100);
         }
         else if (iv == "b"){
-            four = rand(0,50);
+            dresscode[3] = rand(0,50);
         }
 
-        DressCode[1] = (one + two + three + four)/4;
+        DressCode[1] = Average(dresscode);
+
     }
 
     public void brekkie(){
         System.out.println("You have time for a quick breakfast.\n a) eat something before leaving \n b) skip breakfast");
         String three = keys.nextLine();
-        if (three = "a"){
+        if (three == "a"){
             Health[1] = rand(50,100);
         }
-        else if (three = "b"){
+        else if (three == "b"){
             Health[1] = rand(0,50);
         }
     }
@@ -113,22 +114,70 @@ public class DQ {
     public void leave(){
         System.out.println("It's 8.30am and you're ready to leave for work(It's a 7 minute drive).\n a) leave now \n b) chill for about 15 minutes ");
         String four = keys.nextLine();
-        if (four = "a"){
+        if (four == "a"){
             Punctuality[2] = rand(50,100);
         }
-        else if (four = "b"){
+        else if (four == "b"){
             Punctuality[2] = rand(0,50);
         }
     }
+
+    private int Average(int[] array){
+        int sum = 0;
+        for(int i=0;i<array.length;i++){
+            sum = sum + array[i];
+        }
+        int avg = sum/array.length;
+        return avg;
+    }
+
+    public void workstation(){
+        System.out.println("You have arrived at work and have now settled into your workstation. You have to clean your workstation.\n a) wipe your designated surfaces b) carry on without cleaning");
+        String clean = keys.nextLine();
+        if (clean == "a"){
+            Cleanliness[1] = rand(50,100);
+        }
+        else if (clean == "b"){
+            Cleanliness[1] = rand(0,50);
+        }
+    }
+
+    public void f_c(){
+        System.out.println("Your first customer of the day is before you.\n a) greet them with a smile then take their order b) take their order straight away with a frown");
+        String nice = keys.nextLine();
+        if (nice == "a"){
+            CustomerService[1] = rand(50,100);
+        }
+        else if (nice == "b"){
+            CustomerService[1] = rand(0,50);
+        }
+
+    }
+
+    public void f_c1(){
+        System.out.println("You've taken their order, and you need to move on to the next person. What would you say to the customer in front of you?\n a)  Could you please move off to the side to wait for your order b) yell, 'NEXT!!'");
+        String nice1 = keys.nextLine();
+        if (nice1 == "a"){
+            CustomerService[2] = rand(50,100);
+        }
+        else if (nice1 == "b"){
+            CustomerService[2] = rand(0,50);
+        }
+    }
+
+    
+
+
+
+
+
+
+
+
+
 }
 
-    // private void Average(int[] array){
-    //     if (int[] array == Cleanliness)
-    //     for(int i=0;i<Cleanliness.length;i++){
-
-
-    //     }
-    // }
+    
 
     // public void PrintStats(){
 
