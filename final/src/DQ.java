@@ -22,7 +22,7 @@ public class DQ {
 
         
     public void email(){
-        System.out.println("You've just been sent an email to help you prep for your first say of work tomorrow. \n a) open it \n b) ignore it ");
+        System.out.println("\nYou've just been sent an email to help you prep for your first day of work tomorrow. \n a) open it \n b) ignore it ");
         // indicate your answer using the option's corresponding letter
         String one = keys.nextLine();
         if (one.equals("a")){
